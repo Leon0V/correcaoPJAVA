@@ -3,7 +3,7 @@ package models;
 public class Employee {
 
     private String name;
-    private String document;
+    String document;
 
     public String getName() {
         return name;
@@ -24,7 +24,7 @@ public class Employee {
     @Override
     public String toString() {
         
-        return "Employee: << " + name + " || Document Number: " + document+" >> ";
+        return " Employee: " + name + " || Document Number: " + document;
     }
 
 }

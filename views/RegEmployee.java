@@ -17,7 +17,7 @@ public class RegEmployee {
         
         employeeController.addEmployee(employee);
 
-        System.out.println(" -- The "+employee+" was registered.");
+        System.out.println(" -- The employee "+employee.getName()+" was registered under the document: "+employee.getDoc()+".");
     }
     
     

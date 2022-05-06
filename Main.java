@@ -2,6 +2,7 @@
 import utils.Console;
 import views.AllRolls;
 import views.ListEmp;
+import views.SearchPay;
 import views.RegEmployee;
 import views.RegPay;
 
@@ -34,16 +35,21 @@ public class Main {
                     RegPay regPay = new RegPay();
                     regPay.register();
                 break;
+                
+                case 3:
+                    SearchPay searchPay = new SearchPay();
+                    searchPay.list();
+                    break;
+                case 4:
+                    AllRolls allRolls = new AllRolls();
+                    allRolls.list();
+                break;
 
                 case 5:
                     ListEmp listEmp = new ListEmp();
                     listEmp.list();
                 break;
 
-                case 6:
-                    AllRolls allRolls = new AllRolls();
-                    allRolls.list();
-                break;
                 case 0: 
                     System.out.println("\n -- QUIT -- \n");
                 break;
