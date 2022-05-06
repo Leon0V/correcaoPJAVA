@@ -12,50 +12,52 @@ public class Payroll {
     private double incomeTax;
     private double socialTax;
     private double mortgage;
-    // private String docN;
 
     public Employee getDocument() {
         return document;
     }
+
     public void setDocument(Employee document) {
         this.document = document;
     }
-    // public String getDocN() {
-    //     return docN;
-    // }
-    // public void setDocN(String document) {
-    //     this.docN = document;
-    // }
+
     public int getMonth() {
         return month;
     }
+
     public void setMonth(int month) {
         this.month = month;
     }
+
     public int getYear() {
         return year;
     }
+
     public void setYear(int year) {
         this.year = year;
     }
+
     public int getWorkhours() {
         return workhours;
     }
+
     public void setWorkhours(int workhours) {
         this.workhours = workhours;
     }
+
     public double getValue() {
         return value;
     }
+
     public void setValue(double value) {
         this.value = value;
     }
-    
+
     public double getGross() {
         this.gross = (value * workhours);
         return gross;
     }
-  
+
     public Double getIncomeTax() {
         if(gross < 1903.98){
             this.incomeTax = (gross * 0);
@@ -74,23 +76,26 @@ public class Payroll {
         }
         return incomeTax;
     }
- 
+
     public double getSocialTax() {
         if(gross <= 1693.72){
             this.socialTax = (gross * 0.08);
         }
+
         else if(gross >= 1693.73 && gross <= 2822.90){
             this.socialTax = (gross * 0.09);
         }
+
         else if(gross >= 2822.91 && gross <= 5645.80){
             this.socialTax = (gross * 0.11);
         }
+
         else {
             this.socialTax = 621.03;
         }
         return socialTax;
     }
- 
+
     public double getMortgage() {
         this.mortgage = (gross * 0.08);
         return mortgage;
@@ -101,13 +106,13 @@ public class Payroll {
         return net;
     }
 
-
     @Override
     public String toString() {
 
-        return "\n||" + document + " || Fiscal month: "+month+" || Fiscal year: "+year+" || Work hours"+workhours + " || Value per Hour: "+value+
-        "\n || Gross income: "+getGross()+" || Income tax: "+getIncomeTax()+" || Social tax: "+getSocialTax()+
-        "|| Mortgage: "+getMortgage()+" || Net income: "+getLiquid() +" || ";
+        return "\n||" + document + " || Fiscal month: "+month+" || Fiscal year: "+year+" || Work hours: "+workhours + " || Value per Hour: "+value+" || "+
+        "\n|| Gross income: "+String.format("%.2f", getGross())+" || Income tax: "+String.format("%.2f", getIncomeTax())+
+        " || Social tax: "+String.format("%.2f", +getSocialTax())+
+        "|| Mortgage: "+String.format("%.2f", getMortgage())+" || Net income: "+String.format("%.2f", getLiquid()) +" || ";
 
     }
     

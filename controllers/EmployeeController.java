@@ -15,7 +15,7 @@ public class EmployeeController {
     public ArrayList<Employee> list(){
         return employees;
     }
-    
+
     public Employee searchByDoc(String doc){
         for (Employee registeredEmployee : employees){
             if(registeredEmployee.getDoc().equals(doc)){

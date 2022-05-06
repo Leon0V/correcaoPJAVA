@@ -17,7 +17,7 @@ public class SearchPay {
         
         for(Payroll regPays : payController.list()){
 
-            String docNumber = Console.readString("Inform the employee's document number: ");
+            String docNumber = Console.readString("Inform the employee's document: ");
             Employee employee = employeeController.searchByDoc(docNumber);
 
 
@@ -32,12 +32,12 @@ public class SearchPay {
                     if(regPays.getYear() !=0 && regPays.getYear() == (year)){
 
                         System.out.println(regPays);
+                        break;
+                    }else{System.out.println("\n INVALID YEAR!! ");}
 
-                    }else{System.out.println(" INVALID YEAR!! ");}
+                }else{System.out.println("\n INVALID OR UNREGISTERED MONTH!! ");}
 
-                }else{System.out.println(" INVALID OR UNREGISTERED MONTH!! ");}
-
-            }else{System.out.println(" INVALID OR UNREGISTERED EMPLOYEE!! "); break;}
+            }else{System.out.println("\n INVALID OR UNREGISTERED EMPLOYEE!! "); break;}
 
         }
     }

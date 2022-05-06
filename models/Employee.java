@@ -16,7 +16,7 @@ public class Employee {
     public String getDoc() {
         return document;
     }
-
+    
     public void setDoc(String document) {
         this.document = document;
     }
